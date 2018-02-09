@@ -83,7 +83,6 @@ def getLossRate(ty, cbr_rate, ex, f0='1', f1='2', f2='6',f1_type='tcp', st = 2.0
 	bandwidth_0 = float(total_received_bytes_0 * 8) / (end_tcp_0 - start_tcp) / 1000000
 	bandwidth_1 = float(total_received_bytes_1 * 8) / (end_tcp_1 - start_tcp) / 1000000
 	bandwidth_cbr = float(total_received_bytes_cbr * 8) / (end_udp - start_udp) / 1000000
-	avg_b = 
 	print cbr_rate, loss_rate_0, loss_rate_1, loss_rate_cbr, bandwidth_0, bandwidth_1, bandwidth_cbr
 	return [cbr_rate, loss_rate_0, loss_rate_1, loss_rate_cbr, bandwidth_0, bandwidth_1, bandwidth_cbr]
 def exp1_1():
@@ -129,7 +128,7 @@ def exp1_2():
                         f.write('\n')
 		f.close
 		time.sleep(2)
-		os.system('gnuplot -c draw1_2.gnu' + ' ' + ts[0] + ' ' +  title )
+		#os.system('gnuplot -c draw1_2.gnu' + ' ' + ts[0] + ' ' +  title )
 def exp2_1():
         tys = ['R drop', 'R red', 'S drop', 'S red']
         cbr_rates = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 5.5, 6.0, 6.5,7.0, 7.5, 8.0, 8.5, 9.0, 9.5, 10.0]
