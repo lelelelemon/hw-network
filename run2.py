@@ -46,8 +46,12 @@ def calLatency(queue_type, stage):
     trace = "trace/part2_2_" + queue_type+ ".trace"
     dat = "data/part2_2_" + queue_type + "_l.dat"
     f_w = open(dat, 'w')
-    sends = {}
-    acks = {}
+    sends1 = {}
+    sends2 = {}
+    sends3 = {}
+    acks1 = {}
+    acks2 = {}
+    acks3 = {}
     t1 = 0.0
     total_l = 0
     total_pkt = 0
@@ -67,24 +71,48 @@ def calLatency(queue_type, stage):
             s_n = records[10]
             if f_id == '1':
                 if eve_type == '-' and f_n == '0':
-                    sends.update({s_n: t})
-                    print 'update sends s_n', s_n
+                    sends1.update({s_n: t})
                 if eve_type == 'r' and t_n == '3':
-                    acks.update({s_n: t})
-                    print 'update acks s_n', s_n
+                    acks1.update({s_n: t})
+            if f_id == '2':
+                if eve_type == '-' and f_n == '4':
+                    sends2.update({s_n: t})
+                if eve_type == 'r' and t_n == '5':
+                    acks2.update({s_n: t})
+            if f_id == '3':
+                if eve_type == '-' and f_n == '4':
+                    sends3.update({s_n: t})
+                if eve_type == 'r' and t_n == '5':
+                    acks3.update({s_n: t})                    
                     
             if t -  t1 <= stage:
                 pass
             else:
-                ack_s_n = set(acks.viewkeys()).intersection(sends.viewkeys())
-                print 'ack s n size ', len(ack_s_n)
-                for s in ack_s_n:
+                ack_s_n1 = set(acks1.viewkeys()).intersection(sends1.viewkeys())
+                ack_s_n2 = set(acks2.viewkeys()).intersection(sends2.viewkeys())
+                ack_s_n3 = set(acks3.viewkeys()).intersection(sends3.viewkeys())
+                for s in ack_s_n1:
                     # calculate the latency time
-                    latency = acks[s] - sends[s]
+                    latency = acks1[s] - sends1[s]
                     if latency > 0:
                         print latency
                         total_l += latency
                         total_pkt += 1
+                for s in ack_s_n2:
+                    # calculate the latency time
+                    latency = acks2[s] - sends2[s]
+                    if latency > 0:
+                        print latency
+                        total_l += latency
+                        total_pkt += 1
+                for s in ack_s_n3:
+                    # calculate the latency time
+                    latency = acks3[s] - sends3[s]
+                    if latency > 0:
+                        print latency
+                        total_l += latency
+                        total_pkt += 1
+                        
                 if total_pkt == 0:
                     avg_l = 0
                 else:
