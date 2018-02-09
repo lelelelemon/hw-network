@@ -77,7 +77,7 @@ def calLatency(queue_type, stage):
                 pass
             else:
                 ack_s_n = set(acks.viewkeys()).intersection(sends.viewkeys())
-                puts 'ack s n size ', ack_s_n.length
+                print 'ack s n size ', ack_s_n.length
                 for s in ack_s_n:
                     # calculate the latency time
                     latency = acks[s] - sends[s]
