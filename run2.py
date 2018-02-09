@@ -68,13 +68,16 @@ def calLatency(queue_type, stage):
             if f_id == '1':
                 if eve_type == '-' and f_n == '0':
                     sends.update({s_n: t})
+                    print 'update sends s_n', s_n
                 if eve_type == 'r' and f_n == '3':
                     acks.update({s_n: t})
+                    print 'update acks s_n', s_n
                     
             if t -  t1 <= stage:
                 pass
             else:
                 ack_s_n = set(acks.viewkeys()).intersection(sends.viewkeys())
+                puts 'ack s n size ', ack_s_n.length
                 for s in ack_s_n:
                     # calculate the latency time
                     latency = acks[s] - sends[s]
