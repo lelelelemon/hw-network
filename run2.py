@@ -98,8 +98,8 @@ def main():
         os.system('ns part2-2.ns ' + queue_type)
         time.sleep(4)
         print 'finished'
-        calThroughput(queue_type, 0.5)
-        calLatency(queue_type, 0.5)
+        calThroughput(queue_type, 1)
+        calLatency(queue_type, 1)
     
 if __name__ == '__main__':
     main()
