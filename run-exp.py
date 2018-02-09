@@ -3,6 +3,8 @@ import os
 import time
 import matplotlib.pyplot as plt
 
+CBRS = [1,2,3,4,5,6,7,8,9,20]
+
 def getLossRate(ty, cbr_rate, ex, f0='1', f1='2', f2='6',f1_type='tcp', st = 2.0, su = 0, et = 6.0, eu = 8.0):
 	ts = ty.split(' ')
 	tr_file = "trace/" + ex +  "_" + ts[0] + "_" + ts[1] + "_" + str(cbr_rate) + ".trace"
@@ -112,7 +114,7 @@ def exp1_1():
 def exp1_2():
 	tys = ['R R', 'N R', 'V V']
 	titles = ['Reno', 'NewReno', 'Vegas']
-	cbr_rates = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 5.5, 6.0, 6.5,7.0, 7.5, 8.0, 8.5, 9.0, 9.5, 10.0]
+	cbr_rates = CBRS
 	for ty in tys:
                 print ty
                 ts = ty.split(' ')
@@ -131,7 +133,7 @@ def exp1_2():
 		#os.system('gnuplot -c draw1_2.gnu' + ' ' + ts[0] + ' ' +  title )
 def exp2_1():
         tys = ['R drop', 'R red', 'S drop', 'S red']
-        cbr_rates = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 5.5, 6.0, 6.5,7.0, 7.5, 8.0, 8.5, 9.0, 9.5, 10.0]
+        cbr_rates = CBRS
         for ty in tys:
                 print ty
 		loss = ty.split(' ')[1]
