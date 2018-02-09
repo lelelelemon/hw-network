@@ -15,7 +15,7 @@ def calThroughput(tcp_type, queue_type, stage):
         for line in f:
             records = line.split(' ')
             eve_type = records[0]
-            t = records[1]
+            t = float(records[1])
             f_n = records[2]
             t_n = records[3]
             pkt_type = records[4]
