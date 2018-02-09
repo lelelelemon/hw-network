@@ -68,7 +68,7 @@ def calLatency(queue_type, stage):
             if f_id == '1':
                 if eve_type == '-' and f_n == '0':
                     sends.update({s_n: t})
-                if eve_type == 'r' and f_n == '0' and pkt_type == 'ack':
+                if eve_type == 'r' and f_n == '3':
                     acks.update({s_n: t})
                     
             if t -  t1 <= stage:
