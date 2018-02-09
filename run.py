@@ -1,11 +1,13 @@
 import sys
+import time
+import os
 
 VARIANTS = ['S', 'R']
 Queues = ['DropTail', 'RED']
 def calThroughput(tcp_type, queue_type, stage):
     trace = "trace/part2_1_" + tcp_type + "_" + queue_type+ ".trace"
     dat = "data/part2_1_" + tcp_type + "_" + queue_type + ".dat"
-    f = open(dat, 'w+')
+    f = open(dat, 'w')
     t1 = 0
     total_recieved_bytes_0 = 0
     total_recieved_bytes_1 = 0
@@ -38,7 +40,12 @@ def calThroughput(tcp_type, queue_type, stage):
                 total_recieved_bytes_1 = 0
             f.close    
 def main():
-    print "s"
+    for tcp_type in VARIANTS:
+        for queue_type in Queues:
+            os.system('ns part2_1.ns ' + tcp_type + ' ' + queue_type)
+            time.sleep(4)
+            print 'finished'
+            calThroughput(tcp_type, queue_type, 0.5)
     
 if __name__ == '__main__':
     main()
