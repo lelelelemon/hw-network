@@ -42,7 +42,7 @@ def calThroughput(tcp_type, queue_type, stage):
 def main():
     for tcp_type in VARIANTS:
         for queue_type in Queues:
-            os.system('ns part2_1.ns ' + tcp_type + ' ' + queue_type)
+            os.system('ns part2-1.ns ' + tcp_type + ' ' + queue_type)
             time.sleep(4)
             print 'finished'
             calThroughput(tcp_type, queue_type, 0.5)
