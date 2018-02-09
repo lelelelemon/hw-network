@@ -15,7 +15,8 @@ set v1 [lindex $argv 1]
 set namfile [open nam/drop.nam w]
 $ns namtrace-all $namfile
 
-set tf [open trace/part2_1_${v0}_drop.trace w]
+
+set tf [open trace/part2_1_${v0}_${v1}.trace w]
 $ns trace-all $tf
 
 # Create wired nodes.
