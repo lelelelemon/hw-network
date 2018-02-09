@@ -154,7 +154,7 @@ $ns attach-agent $node1 $agent1
 
 $ns color 1 "black"
 $agent1 set fid_ 1
-$agent1 set packetSize_ 210
+$agent1 set packetSize_ 1000
 $agent1 set window_ 20
 $agent1 set windowInit_ 1
 $agent1 set maxcwnd_ 0
@@ -168,7 +168,7 @@ $ns attach-agent $node2 $agent6
 
 $ns color 6 "black"
 $agent6 set fid_ 6
-$agent6 set packetSize_ 210
+$agent6 set packetSize_ 1000
 
 # Create traffic sources and add them to the agent.
 set traffic_source3 [new Application/Traffic/CBR]
@@ -179,7 +179,7 @@ set agent5 [new Agent/Null]
 $ns attach-agent $node3 $agent5
 set agent3 [new Agent/TCPSink]
 $ns attach-agent $node4 $agent3
-$agent3 set packetSize_ 210
+$agent3 set packetSize_ 1000
 
 if {$v1 == "R"} {
         set agent2 [new Agent/TCP/Reno]
@@ -197,7 +197,7 @@ $ns attach-agent $node5 $agent2
 
 $ns color 2 "black"
 $agent2 set fid_ 2
-$agent2 set packetSize_ 210
+$agent2 set packetSize_ 1000
 $agent2 set window_ 20
 $agent2 set windowInit_ 1
 $agent2 set maxcwnd_ 0
@@ -208,7 +208,7 @@ $traffic_source2 attach-agent $agent2
 $traffic_source2 set maxpkts_ 256
 set agent4 [new Agent/TCPSink]
 $ns attach-agent $node6 $agent4
-$agent4 set packetSize_ 210
+$agent4 set packetSize_ 1000
 
 # Connect agents.
 $ns connect $agent1 $agent3
