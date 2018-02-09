@@ -90,7 +90,7 @@ def getLossRate(ty, cbr_rate, ex, f0='1', f1='2', f2='6',f1_type='tcp', st = 2.0
 def exp1_1():
 	tys = ['R R' , 'N R', 'V V', 'N V']
 	titles = ['Reno\/Reno', 'NewReno\/Reno', 'Vegas\/Vegas', 'NewReno\/Vegas']
-	cbr_rates = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 5.5, 6.0, 6.5,7.0, 7.5, 8.0, 8.5, 9.0, 9.5, 10.0]
+	cbr_rates = CBRS
 	for ty in tys:
 		print ty
 		ts = ty.split(' ')
