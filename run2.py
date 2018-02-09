@@ -95,21 +95,19 @@ def calLatency(queue_type, stage):
                     # calculate the latency time
                     latency = acks1[s] - sends1[s]
                     if latency > 0:
-                        print latency
+                        #print latency
                         total_l += latency
                         total_pkt += 1
                 for s in ack_s_n2:
                     # calculate the latency time
                     latency = acks2[s] - sends2[s]
                     if latency > 0:
-                        print latency
                         total_l += latency
                         total_pkt += 1
                 for s in ack_s_n3:
                     # calculate the latency time
                     latency = acks3[s] - sends3[s]
                     if latency > 0:
-                        print latency
                         total_l += latency
                         total_pkt += 1
                         
