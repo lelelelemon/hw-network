@@ -99,6 +99,7 @@ def main():
         time.sleep(4)
         print 'finished'
         calThroughput(queue_type, 0.5)
+        calLatency(queue_type, 0.5)
     
 if __name__ == '__main__':
     main()
