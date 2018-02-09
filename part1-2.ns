@@ -1,0 +1,267 @@
+#------------------------------------------------------- 
+# This ns script has been created by the nam editor.
+# If you edit it manually, the nam editor might not
+# be able to open it properly in the future.
+#
+# EDITING BY HAND IS AT YOUR OWN RISK!
+#------------------------------------------------------- 
+# Create a new simulator object.
+set ns [new Simulator]
+
+# read from cmd parameters
+set v0 [lindex $argv 0]
+set v1 [lindex $argv 1]
+set cbr_rate [lindex $argv 2]
+
+# Create a nam trace datafile.
+set namfile [open /home/junwen/course/cs333/hw1/part1.nam w]
+$ns namtrace-all $namfile
+
+set tf [open trace/part1_2_${v0}_${v1}_${cbr_rate}.trace w]
+$ns trace-all $tf
+# Create wired nodes.
+set node1 [$ns node]
+## node1 at 487.390594,595.843750
+$node1 set X_ 487.390594
+$node1 set Y_ 595.843750
+$node1 set Z_ 0.0
+$node1 color "black"
+
+set node2 [$ns node]
+## node2 at 499.765594,570.750000
+$node2 set X_ 499.765594
+$node2 set Y_ 570.750000
+$node2 set Z_ 0.0
+$node2 color "black"
+
+set node3 [$ns node]
+## node3 at 541.015625,573.156250
+$node3 set X_ 541.015625
+$node3 set Y_ 573.156250
+$node3 set Z_ 0.0
+$node3 color "black"
+
+set node4 [$ns node]
+## node4 at 543.765625,600.656250
+$node4 set X_ 543.765625
+$node4 set Y_ 600.656250
+$node4 set Z_ 0.0
+$node4 color "black"
+
+set node5 [$ns node]
+## node5 at 485.328094,547.718750
+$node5 set X_ 485.328094
+$node5 set Y_ 547.718750
+$node5 set Z_ 0.0
+$node5 color "black"
+
+set node6 [$ns node]
+## node6 at 555.109375,539.125000
+$node6 set X_ 555.109375
+$node6 set Y_ 539.125000
+$node6 set Z_ 0.0
+$node6 color "black"
+
+
+# Create links between nodes.
+$ns simplex-link $node1 $node2 1.000000Mb 20.000000ms DropTail
+$ns simplex-link-op $node1 $node2 queuePos 0.5
+$ns simplex-link-op $node1 $node2 color black
+$ns simplex-link-op $node1 $node2 orient 296.3deg
+# Set Queue Properties for link 1->2
+[[$ns link $node1 $node2] queue] set limit_ 20
+
+$ns simplex-link $node2 $node3 1.000000Mb 20.000000ms DropTail
+$ns simplex-link-op $node2 $node3 queuePos 0.5
+$ns simplex-link-op $node2 $node3 color black
+$ns simplex-link-op $node2 $node3 orient 3.3deg
+# Set Queue Properties for link 2->3
+[[$ns link $node2 $node3] queue] set limit_ 20
+
+$ns simplex-link $node2 $node1 10.000000Mb 20.000000ms DropTail
+$ns simplex-link-op $node2 $node1 queuePos 0.5
+$ns simplex-link-op $node2 $node1 color black
+$ns simplex-link-op $node2 $node1 orient 116.3deg
+# Set Queue Properties for link 2->1
+[[$ns link $node2 $node1] queue] set limit_ 20
+
+$ns simplex-link $node2 $node5 1.000000Mb 20.000000ms DropTail
+$ns simplex-link-op $node2 $node5 queuePos 0.5
+$ns simplex-link-op $node2 $node5 color black
+$ns simplex-link-op $node2 $node5 orient 237.9deg
+# Set Queue Properties for link 2->5
+[[$ns link $node2 $node5] queue] set limit_ 20
+
+$ns simplex-link $node3 $node2 10.000000Mb 20.000000ms DropTail
+$ns simplex-link-op $node3 $node2 queuePos 0.5
+$ns simplex-link-op $node3 $node2 color black
+$ns simplex-link-op $node3 $node2 orient 183.3deg
+# Set Queue Properties for link 3->2
+[[$ns link $node3 $node2] queue] set limit_ 20
+
+$ns simplex-link $node3 $node4 10.000000Mb 20.000000ms DropTail
+$ns simplex-link-op $node3 $node4 queuePos 0.5
+$ns simplex-link-op $node3 $node4 color black
+$ns simplex-link-op $node3 $node4 orient 84.3deg
+# Set Queue Properties for link 3->4
+[[$ns link $node3 $node4] queue] set limit_ 20
+
+$ns simplex-link $node3 $node6 1.000000Mb 20.000000ms DropTail
+$ns simplex-link-op $node3 $node6 queuePos 0.5
+$ns simplex-link-op $node3 $node6 color black
+$ns simplex-link-op $node3 $node6 orient 292.5deg
+# Set Queue Properties for link 3->6
+[[$ns link $node3 $node6] queue] set limit_ 20
+
+$ns simplex-link $node4 $node3 1.000000Mb 20.000000ms DropTail
+$ns simplex-link-op $node4 $node3 queuePos 0.5
+$ns simplex-link-op $node4 $node3 color black
+$ns simplex-link-op $node4 $node3 orient 264.3deg
+# Set Queue Properties for link 4->3
+[[$ns link $node4 $node3] queue] set limit_ 20
+
+$ns simplex-link $node5 $node2 10.000000Mb 20.000000ms DropTail
+$ns simplex-link-op $node5 $node2 queuePos 0.5
+$ns simplex-link-op $node5 $node2 color black
+$ns simplex-link-op $node5 $node2 orient 57.9deg
+# Set Queue Properties for link 5->2
+[[$ns link $node5 $node2] queue] set limit_ 20
+
+$ns simplex-link $node6 $node3 10.000000Mb 20.000000ms DropTail
+$ns simplex-link-op $node6 $node3 queuePos 0.5
+$ns simplex-link-op $node6 $node3 color black
+$ns simplex-link-op $node6 $node3 orient 112.5deg
+# Set Queue Properties for link 6->3
+[[$ns link $node6 $node3] queue] set limit_ 20
+
+# Add Link Loss Models
+
+# Create agents depends on parameters 1.
+if {$v0 == "R"} {
+	set agent1 [new Agent/TCP/Reno]
+} elseif {$v0 == "N"} {
+	set agent1 [new Agent/TCP/Newreno]
+} elseif {$v0 == "V"} {
+        set agent1 [new Agent/TCP/Vegas]
+	$agent1 set v_alpha_ 1
+	$agent1 set v_beta_ 3
+} elseif {$v0 == "T"} {
+        set agent1 [new Agent/TCP]
+}
+
+
+$ns attach-agent $node1 $agent1
+
+$ns color 1 "black"
+$agent1 set fid_ 1
+$agent1 set packetSize_ 210
+$agent1 set window_ 20
+$agent1 set windowInit_ 1
+$agent1 set maxcwnd_ 0
+
+# Create traffic sources and add them to the agent.
+set traffic_source1 [new Application/FTP]
+$traffic_source1 attach-agent $agent1
+$traffic_source1 set maxpkts_ 256
+set agent6 [new Agent/UDP]
+$ns attach-agent $node2 $agent6
+
+$ns color 6 "black"
+$agent6 set fid_ 6
+$agent6 set packetSize_ 210
+
+# Create traffic sources and add them to the agent.
+set traffic_source3 [new Application/Traffic/CBR]
+$traffic_source3 attach-agent $agent6
+$traffic_source3 set rate_ ${cbr_rate}mb
+$traffic_source3 set type_ CBR
+set agent5 [new Agent/Null]
+$ns attach-agent $node3 $agent5
+set agent3 [new Agent/TCPSink]
+$ns attach-agent $node4 $agent3
+$agent3 set packetSize_ 210
+
+if {$v1 == "R"} {
+        set agent2 [new Agent/TCP/Reno]
+} elseif {$v1 == "N"} {
+        set agent2 [new Agent/TCP/Newreno]
+} elseif {$v1 == "V"} {
+        set agent2 [new Agent/TCP/Vegas]
+	$agent2 set v_alpha_ 1
+	$agent2 set v_beta_ 3
+} elseif {$v1 == "T"} {
+        set agent2 [new Agent/TCP]
+}
+
+$ns attach-agent $node5 $agent2
+
+$ns color 2 "black"
+$agent2 set fid_ 2
+$agent2 set packetSize_ 210
+$agent2 set window_ 20
+$agent2 set windowInit_ 1
+$agent2 set maxcwnd_ 0
+
+# Create traffic sources and add them to the agent.
+set traffic_source2 [new Application/FTP]
+$traffic_source2 attach-agent $agent2
+$traffic_source2 set maxpkts_ 256
+set agent4 [new Agent/TCPSink]
+$ns attach-agent $node6 $agent4
+$agent4 set packetSize_ 210
+
+# Connect agents.
+$ns connect $agent1 $agent3
+
+
+# Traffic Source actions.
+$ns at 2.00000 "$traffic_source1 start"
+$ns at 6.00000 "$traffic_source1 stop"
+
+$ns connect $agent6 $agent5
+
+
+# Traffic Source actions.
+$ns at 0.00000 "$traffic_source3 start"
+$ns at 8.00000 "$traffic_source3 stop"
+
+$ns connect $agent2 $agent4
+
+
+# Traffic Source actions.
+# Stop the N5 - N6, only keep a single TCP flow 
+#$ns at 2.00000 "$traffic_source2 start"
+#$ns at 6.00000 "$traffic_source2 stop"
+
+#create record 
+proc record {} {
+  global agent5 agent4 agent3 
+  global agent6 traffic_source3
+  set ns [Simulator instance]
+  set bw0 [$agent5 set bytes_]
+  set bw1 [$agent4 set bytes_]
+  set bw2 [$agent3 set bytes_]
+  set bw3 [expr ($bw0 + $bw1 + $bw2)/3]
+  set now [$ns now]
+  set time 0.5
+  set sd0 [$traffic_source3 set rate_]
+  $agent5 set bytes_ 0
+  $agent4 set bytes_ 0
+  $agent3 set bytes_ 0
+  $ns at [expr $now+$time] "record"
+}
+
+# Run the simulation
+proc finish {} {
+	global ns namfile tf 
+	$ns flush-trace
+	close $namfile
+	close $tf
+	#exec nam -r 2000.000000us /home/junwen/course/cs333/hw1/part1.nam &	
+	#exec xgraph out0.tr out1.tr out2.tr out3.tr -geometry 800x400 &
+	#exec xgraph out3.tr -geometry 800x400 &
+	exit 0
+	}
+#$ns at 0.00 "record"
+$ns at 10.000000 "finish"
+$ns run
