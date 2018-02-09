@@ -95,7 +95,7 @@ def calLatency(queue_type, stage):
     f_w.close
 def main():
     for queue_type in Queues:
-        os.system('ns part2-1.ns ' + ' ' + queue_type)
+        os.system('ns part2-2.ns ' + queue_type)
         time.sleep(4)
         print 'finished'
         calThroughput(queue_type, 0.5)
