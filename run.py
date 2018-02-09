@@ -7,7 +7,7 @@ Queues = ['DropTail', 'RED']
 def calThroughput(tcp_type, queue_type, stage):
     trace = "trace/part2_1_" + tcp_type + "_" + queue_type+ ".trace"
     dat = "data/part2_1_" + tcp_type + "_" + queue_type + ".dat"
-    f = open(dat, 'w')
+    f_w = open(dat, 'w')
     t1 = 0
     total_recieved_bytes_0 = 0
     total_recieved_bytes_1 = 0
@@ -34,11 +34,11 @@ def calThroughput(tcp_type, queue_type, stage):
                 tp_0 = float(total_recieved_bytes_0) * 8 /stage/ 1000000
                 tp_1 = float(total_recieved_bytes_1) * 8 /stage/ 1000000
                 con = str(t1) + ' ' + str(tp_0) + str(tp_1) + '\n'
-                f.write(con)
+                f_w.write(con)
                 t += stage
                 total_recieved_bytes_0 = 0
                 total_recieved_bytes_1 = 0
-            f.close    
+            f_w.close    
 def main():
     for tcp_type in VARIANTS:
         for queue_type in Queues:
