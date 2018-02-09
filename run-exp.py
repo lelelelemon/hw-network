@@ -3,7 +3,7 @@ import os
 import time
 import matplotlib.pyplot as plt
 
-CBRS = [1,2,3,4,5,6,7,8,9,20]
+CBRS = [1,2,3,4,5,6,7,8,9,10]
 
 def getLossRate(ty, cbr_rate, ex, f0='1', f1='2', f2='6',f1_type='tcp', st = 2.0, su = 0, et = 6.0, eu = 8.0):
 	ts = ty.split(' ')
