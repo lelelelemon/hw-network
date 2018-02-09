@@ -1,0 +1,205 @@
+#------------------------------------------------------- 
+# This ns script has been created by the nam editor.
+# If you edit it manually, the nam editor might not
+# be able to open it properly in the future.
+#
+# EDITING BY HAND IS AT YOUR OWN RISK!
+#------------------------------------------------------- 
+# Create a new simulator object.
+set ns [new Simulator]
+
+set v0 [lindex $argv 0]
+
+# Create a nam trace datafile.
+set namfile [open /home/junwen/Downloads/ns-allinone-2.35/hw1/part2/sec1/red.nam w]
+$ns namtrace-all $namfile
+
+set tf [open trace/part2_1_${v0}_red.trace w]
+$ns trace-all $tf
+
+# Create wired nodes.
+set node1 [$ns node]
+## node1 at 504.578094,587.593750
+$node1 set X_ 504.578094
+$node1 set Y_ 587.593750
+$node1 set Z_ 0.0
+$node1 color "black"
+
+set node2 [$ns node]
+## node2 at 522.796875,554.937500
+$node2 set X_ 522.796875
+$node2 set Y_ 554.937500
+$node2 set Z_ 0.0
+$node2 color "black"
+
+set node3 [$ns node]
+## node3 at 589.140625,551.500000
+$node3 set X_ 589.140625
+$node3 set Y_ 551.500000
+$node3 set Z_ 0.0
+$node3 color "black"
+
+set node4 [$ns node]
+## node4 at 601.171875,594.812500
+$node4 set X_ 601.171875
+$node4 set Y_ 594.812500
+$node4 set Z_ 0.0
+$node4 color "black"
+
+set node5 [$ns node]
+## node5 at 506.640594,504.406219
+$node5 set X_ 506.640594
+$node5 set Y_ 504.406219
+$node5 set Z_ 0.0
+$node5 color "black"
+
+set node6 [$ns node]
+## node6 at 604.953125,516.093750
+$node6 set X_ 604.953125
+$node6 set Y_ 516.093750
+$node6 set Z_ 0.0
+$node6 color "black"
+
+
+
+# Create links between nodes.
+$ns simplex-link $node6 $node3 10.00Mb 20.000000ms RED
+$ns simplex-link-op $node6 $node3 queuePos 0.5
+$ns simplex-link-op $node6 $node3 color black
+$ns simplex-link-op $node6 $node3 orient 142.5deg
+# Set Queue Properties for link 6->3
+[[$ns link $node6 $node3] queue] set limit_ 20
+
+$ns simplex-link $node5 $node2 10.00Mb 20.000000ms RED
+$ns simplex-link-op $node5 $node2 queuePos 0.5
+$ns simplex-link-op $node5 $node2 color black
+$ns simplex-link-op $node5 $node2 orient 74.6deg
+# Set Queue Properties for link 5->2
+[[$ns link $node5 $node2] queue] set limit_ 20
+
+$ns simplex-link $node4 $node3 10.00Mb 20.000000ms RED
+$ns simplex-link-op $node4 $node3 queuePos 0.5
+$ns simplex-link-op $node4 $node3 color black
+$ns simplex-link-op $node4 $node3 orient 247.7deg
+# Set Queue Properties for link 4->3
+[[$ns link $node4 $node3] queue] set limit_ 20
+
+$ns simplex-link $node3 $node6 10.00Mb 20.000000ms RED
+$ns simplex-link-op $node3 $node6 queuePos 0.5
+$ns simplex-link-op $node3 $node6 color black
+$ns simplex-link-op $node3 $node6 orient 322.5deg
+# Set Queue Properties for link 3->6
+[[$ns link $node3 $node6] queue] set limit_ 20
+
+$ns simplex-link $node3 $node4 10.00Mb 20.000000ms RED
+$ns simplex-link-op $node3 $node4 queuePos 0.5
+$ns simplex-link-op $node3 $node4 color black
+$ns simplex-link-op $node3 $node4 orient 67.7deg
+# Set Queue Properties for link 3->4
+[[$ns link $node3 $node4] queue] set limit_ 20
+
+$ns simplex-link $node3 $node2 1.500Mb 20.000000ms RED
+$ns simplex-link-op $node3 $node2 queuePos 0.5
+$ns simplex-link-op $node3 $node2 color black
+$ns simplex-link-op $node3 $node2 orient 181.5deg
+# Set Queue Properties for link 3->2
+[[$ns link $node3 $node2] queue] set limit_ 20
+
+$ns simplex-link $node2 $node5 10.00Mb 20.000000ms RED
+$ns simplex-link-op $node2 $node5 queuePos 0.5
+$ns simplex-link-op $node2 $node5 color black
+$ns simplex-link-op $node2 $node5 orient 254.6deg
+# Set Queue Properties for link 2->5
+[[$ns link $node2 $node5] queue] set limit_ 20
+
+$ns simplex-link $node2 $node3 1.500Mb 20.000000ms RED
+$ns simplex-link-op $node2 $node3 queuePos 0.5
+$ns simplex-link-op $node2 $node3 color black
+$ns simplex-link-op $node2 $node3 orient 1.5deg
+# Set Queue Properties for link 2->3
+[[$ns link $node2 $node3] queue] set limit_ 20
+
+$ns simplex-link $node2 $node1 10.00Mb 20.000000ms RED
+$ns simplex-link-op $node2 $node1 queuePos 0.5
+$ns simplex-link-op $node2 $node1 color black
+$ns simplex-link-op $node2 $node1 orient 118.1deg
+# Set Queue Properties for link 2->1
+[[$ns link $node2 $node1] queue] set limit_ 20
+
+$ns simplex-link $node1 $node2 10.00Mb 20.000000ms RED
+$ns simplex-link-op $node1 $node2 queuePos 0.5
+$ns simplex-link-op $node1 $node2 color black
+$ns simplex-link-op $node1 $node2 orient 298.1deg
+# Set Queue Properties for link 1->2
+[[$ns link $node1 $node2] queue] set limit_ 20
+
+# Add Link Loss Models
+
+# Create agents.
+set agent16 [new Agent/Null]
+$ns attach-agent $node6 $agent16
+set agent15 [new Agent/UDP]
+$ns attach-agent $node5 $agent15
+
+$ns color 15 "black"
+$agent15 set fid_ 15
+$agent15 set packetSize_ 500
+
+# Create traffic sources and add them to the agent.
+set traffic_source8 [new Application/Traffic/CBR]
+$traffic_source8 attach-agent $agent15
+$traffic_source8 set interval_ 0.001950
+$traffic_source8 set rate_ 1mb
+$traffic_source8 set packetSize_ 500
+set agent14 [new Agent/TCPSink]
+$ns attach-agent $node4 $agent14
+$agent14 set packetSize_ 500
+
+# Create agents depends on parameters 1.
+if {$v0 == "S"} {
+        set agent1 [new Agent/TCP/Sack1]
+} elseif {$v0 == "N"} {
+        set agent1 [new Agent/TCP/Newreno]
+}
+
+set agent13 [new Agent/TCP]
+$ns attach-agent $node1 $agent13
+
+$ns color 13 "black"
+$agent13 set fid_ 13
+$agent13 set packetSize_ 1000
+$agent13 set window_ 20
+$agent13 set windowInit_ 1
+$agent13 set maxcwnd_ 0
+
+# Create traffic sources and add them to the agent.
+set traffic_source7 [new Application/FTP]
+$traffic_source7 attach-agent $agent13
+$traffic_source7 set maxpkts_ 256
+
+# Connect agents.
+$ns connect $agent15 $agent16
+
+
+# Traffic Source actions.
+$ns at 10.000000 "$traffic_source8 start"
+$ns at 20.000000 "$traffic_source8 stop"
+
+$ns connect $agent13 $agent14
+
+
+# Traffic Source actions.
+$ns at 0.000000 "$traffic_source7 start"
+$ns at 20.000000 "$traffic_source7 stop"
+
+# Run the simulation
+proc finish {} {
+	global ns namfile tf
+	$ns flush-trace
+	close $namfile
+	close $tf
+	#exec nam -r 2000.000000us /home/junwen/Downloads/ns-allinone-2.35/hw1/part2/sec1/drop.nam &	
+	exit 0
+	}
+$ns at 60.000000 "finish"
+$ns run
