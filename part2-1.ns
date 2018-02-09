@@ -155,7 +155,7 @@ $cbr set rate_ 1mb
 $cbr set packetSize_ 500
 set tcp_sink  [new Agent/TCPSink]
 $ns attach-agent $node4 $tcp_sink
-$tcp_sink  set packetSize_ 500
+#$tcp_sink  set packetSize_ 500
 
 # Create agents depends on parameters 1.
 if {$v0 == "S"} {
