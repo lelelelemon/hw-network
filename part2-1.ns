@@ -160,8 +160,8 @@ $tcp_sink  set packetSize_ 500
 # Create agents depends on parameters 1.
 if {$v0 == "S"} {
         set tcp [new Agent/TCP/Sack1]
-} elseif {$v0 == "N"} {
-        set tcp [new Agent/TCP/Newreno]
+} elseif {$v0 == "R"} {
+        set tcp [new Agent/TCP/Reno]
 }
 
 $ns attach-agent $node1 $tcp
