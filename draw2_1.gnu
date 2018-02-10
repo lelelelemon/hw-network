@@ -17,7 +17,7 @@ file3 = "data/part2_1_S_DropTail.dat"
 file4 = "data/part2_1_S_RED.dat"
 
 #print file
-set title 'Latency'
+set title 'Throughtput'
 f1 = "Reno DropTail"
 f2 = "Reno RED"
 f3 = "Sack DropTail"
