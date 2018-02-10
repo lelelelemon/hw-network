@@ -230,21 +230,21 @@ $ns connect $udp3 $udp3_null
 
 # Traffic Source actions.
 $ns at 0.200000 "$cbr3 start"
-$ns at 8.000000 "$cbr3 stop"
+$ns at 60.000000 "$cbr3 stop"
 
 $ns connect $udp2 $udp2_null
 
 
 # Traffic Source actions.
 $ns at 0.100000 "$cbr2 start"
-$ns at 8.000000 "$cbr2 stop"
+$ns at 60.000000 "$cbr2 stop"
 
 $ns connect $udp1 $udp1_null
 
 
 # Traffic Source actions.
 $ns at 0.000000 "$cbr1 start"
-$ns at 8.000000 "$cbr1 stop"
+$ns at 60.000000 "$cbr1 stop"
 
 # Run the simulation
 proc finish {} {
