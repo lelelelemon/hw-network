@@ -45,7 +45,7 @@ def main():
             os.system('ns part2-1.ns ' + tcp_type + ' ' + queue_type)
             time.sleep(4)
             print 'finished'
-            calThroughput(tcp_type, queue_type, 0.5)
+            calThroughput(tcp_type, queue_type, 1)
     
 if __name__ == '__main__':
     main()
