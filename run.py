@@ -33,7 +33,7 @@ def calThroughput(tcp_type, queue_type, stage):
             else:
                 tp_0 = float(total_recieved_bytes_0) * 8 /stage/ 1000000
                 tp_1 = float(total_recieved_bytes_1) * 8 /stage/ 1000000
-                con = str(t1) + ' ' + str(tp_0) + str(tp_1) + '\n'
+                con = str(t1) + ' ' + str(tp_0)  + ' ' + str(tp_1) + '\n'
                 f_w.write(con)
                 t1 += stage
                 total_recieved_bytes_0 = 0
