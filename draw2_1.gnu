@@ -23,9 +23,9 @@ f2 = "Reno RED"
 f3 = "Sack DropTail"
 f4 = "Sack RED"
 t1 = 'TCP-DropTail'
-t2 = 'UDP-DropTail'
+t2 = 'CBR-DropTail'
 t3 = 'TCP-RED'
-t4 = 'UPD-RED'
+t4 = 'CBR-RED'
 set output sprintf("pic/part2_1_%s.png", f1)
 plot file1 using 1:2 title t1 ls 1  with lines,\
      file1 using 1:3 title t2 ls 2 with lines,\
