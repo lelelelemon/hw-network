@@ -53,9 +53,15 @@ def calLatency(queue_type, stage):
     acks2 = {}
     acks3 = {}
     t1 = 0.0
-    total_l = 0
-    total_pkt = 0
-    avg_l = 0
+    total_l_1 = 0
+    total_pkt_1 = 0
+    avg_l_1 = 0
+    total_l_2 = 0
+    total_pkt_2 = 0
+    avg_l_2 = 0
+    total_l_3 = 0
+    total_pkt_3 = 0
+    avg_l_3 = 0
     with open(trace) as f:
         for line in f:
             records = line.split(' ')
@@ -80,9 +86,9 @@ def calLatency(queue_type, stage):
                 if eve_type == 'r' and t_n == '5':
                     acks2.update({s_n: t})
             if f_id == '3':
-                if eve_type == '-' and f_n == '4':
+                if eve_type == '-' and f_n == '6':
                     sends3.update({s_n: t})
-                if eve_type == 'r' and t_n == '5':
+                if eve_type == 'r' and t_n == '7':
                     acks3.update({s_n: t})                    
                     
             if t -  t1 <= stage:
@@ -96,26 +102,34 @@ def calLatency(queue_type, stage):
                     latency = acks1[s] - sends1[s]
                     if latency > 0:
                         #print latency
-                        total_l += latency
-                        total_pkt += 1
+                        total_l_1 += latency
+                        total_pkt_1 += 1
                 for s in ack_s_n2:
                     # calculate the latency time
                     latency = acks2[s] - sends2[s]
                     if latency > 0:
-                        total_l += latency
-                        total_pkt += 1
+                        total_l_2 += latency
+                        total_pkt_2 += 1
                 for s in ack_s_n3:
                     # calculate the latency time
                     latency = acks3[s] - sends3[s]
                     if latency > 0:
-                        total_l += latency
-                        total_pkt += 1
+                        total_l_3 += latency
+                        total_pkt_3 += 1
                         
-                if total_pkt == 0:
-                    avg_l = 0
+                if total_pkt_1 == 0:
+                    avg_l_1 = 0
                 else:
-                    avg_l = float(total_l) / total_pkt * 1000
-                con = str(t1) + ' ' + str(avg_l) + ' ' + '\n'
+                    avg_l_1 = float(total_l_1) / total_pkt_1 * 1000
+                if total_pkt_2 == 0:
+                    avg_l_2 = 0
+                else:
+                    avg_l_2 = float(total_l_2) / total_pkt_2 * 1000
+                if total_pkt_3 == 0:
+                    avg_l_3 = 0
+                else:
+                    avg_l_3 = float(total_l_3) / total_pkt_3 * 1000                
+		con = str(t1) + ' ' + str(avg_l_1) + ' '+ str(avg_l_2) + ' '+ str(avg_l_3) + ' ' + '\n'
                 f_w.write(con)
                 t1 += stage
                 total_l = 0

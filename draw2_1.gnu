@@ -22,22 +22,20 @@ f1 = "Reno DropTail"
 f2 = "Reno RED"
 f3 = "Sack DropTail"
 f4 = "Sack RED"
-t1 = 'TCP'
-t2 = 'UDP'
+t1 = 'TCP-DropTail'
+t2 = 'UDP-DropTail'
+t3 = 'TCP-RED'
+t4 = 'UPD-RED'
 set output sprintf("pic/part2_1_%s.png", f1)
 plot file1 using 1:2 title t1 ls 1  with lines,\
-     file1 using 1:3 title t2 ls 2 with lines
-
-set output sprintf("pic/part2_1_%s.png", f2)
-plot file2 using 1:2 title t1 ls 1 with lines,\
-     file2 using 1:3 title t2 ls 2 with lines
+     file1 using 1:3 title t2 ls 2 with lines,\
+     file2 using 1:2 title t3 ls 3 with lines,\
+     file2 using 1:3 title t4 ls 4 with lines
 
 set output sprintf("pic/part2_1_%s.png", f3)
 plot file3 using 1:2 title t1 ls 1 with lines,\
-     file3 using 1:3 title t2 ls 2 with lines
-
-set output sprintf("pic/part2_1_%s.png", f4)
-plot file4 using 1:2 title t1 ls 1 with lines,\
-     file4 using 1:3 title t2 ls 2 with lines
+     file3 using 1:3 title t2 ls 2 with lines,\
+     file4 using 1:2 title t3 ls 3 with lines,\
+     file4 using 1:3 title t4 ls 4 with lines
 
  
