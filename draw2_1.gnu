@@ -17,7 +17,7 @@ file3 = "data/part2_1_S_DropTail.dat"
 file4 = "data/part2_1_S_RED.dat"
 
 #print file
-set title 'Throughtput'
+set title 'Throughtput-Reno'
 f1 = "Reno DropTail"
 f2 = "Reno RED"
 f3 = "Sack DropTail"
@@ -31,6 +31,7 @@ plot file1 using 1:2 title t1 ls 1  with lines,\
      file1 using 1:3 title t2 ls 2 with lines,\
      file2 using 1:2 title t3 ls 3 with lines,\
      file2 using 1:3 title t4 ls 4 with lines
+set title 'Throughput-SACK'
 
 set output sprintf("pic/part2_1_%s.png", f3)
 plot file3 using 1:2 title t1 ls 1 with lines,\
