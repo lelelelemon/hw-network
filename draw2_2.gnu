@@ -10,7 +10,7 @@ set style line 2 lc rgb '#dd181f' lt 9 lw 2 pi -1 ps 1.0
 set style line 3 lc rgb '#29c524' lt 6 lw 2 pi -1 ps 1.0
 set style line 4 lc rgb '#7D72F9' lt 7 lw 2 pi -1 ps 1.0
 set style line 5 lc rgb '#000000' lt 8 lw 2 pi -1 ps 1.0
-set style line 6 lc rgb '#FF7F50' lt 8 lw 2 pi -1 ps 1.0
+set style line 6 lc rgb '#FF1493' lt 8 lw 2 pi -1 ps 1.0
 
 file1 = "data/part2_2_DropTail.dat"
 file2 = "data/part2_2_RED.dat"
