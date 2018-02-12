@@ -64,73 +64,73 @@ $node6 color "black"
 
 
 # Create links between nodes.
-$ns simplex-link $node1 $node2 10.0Mb 20.000000ms DropTail
-$ns simplex-link-op $node1 $node2 queuePos 0.5
-$ns simplex-link-op $node1 $node2 color black
-$ns simplex-link-op $node1 $node2 orient 296.3deg
+$ns duplex-link $node1 $node2 10.0Mb 20.000000ms DropTail
+$ns duplex-link-op $node1 $node2 queuePos 0.5
+$ns duplex-link-op $node1 $node2 color black
+$ns duplex-link-op $node1 $node2 orient 296.3deg
 # Set Queue Properties for link 1->2
 [[$ns link $node1 $node2] queue] set limit_ 20
 
-$ns simplex-link $node2 $node3 10.0Mb 20.000000ms DropTail
-$ns simplex-link-op $node2 $node3 queuePos 0.5
-$ns simplex-link-op $node2 $node3 color black
-$ns simplex-link-op $node2 $node3 orient 3.3deg
+$ns duplex-link $node2 $node3 10.0Mb 20.000000ms DropTail
+$ns duplex-link-op $node2 $node3 queuePos 0.5
+$ns duplex-link-op $node2 $node3 color black
+$ns duplex-link-op $node2 $node3 orient 3.3deg
 # Set Queue Properties for link 2->3
 [[$ns link $node2 $node3] queue] set limit_ 20
 
-$ns simplex-link $node2 $node1 10.000000Mb 20.000000ms DropTail
-$ns simplex-link-op $node2 $node1 queuePos 0.5
-$ns simplex-link-op $node2 $node1 color black
-$ns simplex-link-op $node2 $node1 orient 116.3deg
+$ns duplex-link $node2 $node1 10.000000Mb 20.000000ms DropTail
+$ns duplex-link-op $node2 $node1 queuePos 0.5
+$ns duplex-link-op $node2 $node1 color black
+$ns duplex-link-op $node2 $node1 orient 116.3deg
 # Set Queue Properties for link 2->1
 [[$ns link $node2 $node1] queue] set limit_ 20
 
-$ns simplex-link $node2 $node5 10.0Mb 20.000000ms DropTail
-$ns simplex-link-op $node2 $node5 queuePos 0.5
-$ns simplex-link-op $node2 $node5 color black
-$ns simplex-link-op $node2 $node5 orient 237.9deg
+$ns duplex-link $node2 $node5 10.0Mb 20.000000ms DropTail
+$ns duplex-link-op $node2 $node5 queuePos 0.5
+$ns duplex-link-op $node2 $node5 color black
+$ns duplex-link-op $node2 $node5 orient 237.9deg
 # Set Queue Properties for link 2->5
 [[$ns link $node2 $node5] queue] set limit_ 20
 
-$ns simplex-link $node3 $node2 10.000000Mb 20.000000ms DropTail
-$ns simplex-link-op $node3 $node2 queuePos 0.5
-$ns simplex-link-op $node3 $node2 color black
-$ns simplex-link-op $node3 $node2 orient 183.3deg
+$ns duplex-link $node3 $node2 10.000000Mb 20.000000ms DropTail
+$ns duplex-link-op $node3 $node2 queuePos 0.5
+$ns duplex-link-op $node3 $node2 color black
+$ns duplex-link-op $node3 $node2 orient 183.3deg
 # Set Queue Properties for link 3->2
 [[$ns link $node3 $node2] queue] set limit_ 20
 
-$ns simplex-link $node3 $node4 10.000000Mb 20.000000ms DropTail
-$ns simplex-link-op $node3 $node4 queuePos 0.5
-$ns simplex-link-op $node3 $node4 color black
-$ns simplex-link-op $node3 $node4 orient 84.3deg
+$ns duplex-link $node3 $node4 10.000000Mb 20.000000ms DropTail
+$ns duplex-link-op $node3 $node4 queuePos 0.5
+$ns duplex-link-op $node3 $node4 color black
+$ns duplex-link-op $node3 $node4 orient 84.3deg
 # Set Queue Properties for link 3->4
 [[$ns link $node3 $node4] queue] set limit_ 20
 
-$ns simplex-link $node3 $node6 10.0Mb 20.000000ms DropTail
-$ns simplex-link-op $node3 $node6 queuePos 0.5
-$ns simplex-link-op $node3 $node6 color black
-$ns simplex-link-op $node3 $node6 orient 292.5deg
+$ns duplex-link $node3 $node6 10.0Mb 20.000000ms DropTail
+$ns duplex-link-op $node3 $node6 queuePos 0.5
+$ns duplex-link-op $node3 $node6 color black
+$ns duplex-link-op $node3 $node6 orient 292.5deg
 # Set Queue Properties for link 3->6
 [[$ns link $node3 $node6] queue] set limit_ 20
 
-$ns simplex-link $node4 $node3 10.0Mb 20.000000ms DropTail
-$ns simplex-link-op $node4 $node3 queuePos 0.5
-$ns simplex-link-op $node4 $node3 color black
-$ns simplex-link-op $node4 $node3 orient 264.3deg
+$ns duplex-link $node4 $node3 10.0Mb 20.000000ms DropTail
+$ns duplex-link-op $node4 $node3 queuePos 0.5
+$ns duplex-link-op $node4 $node3 color black
+$ns duplex-link-op $node4 $node3 orient 264.3deg
 # Set Queue Properties for link 4->3
 [[$ns link $node4 $node3] queue] set limit_ 20
 
-$ns simplex-link $node5 $node2 10.000000Mb 20.000000ms DropTail
-$ns simplex-link-op $node5 $node2 queuePos 0.5
-$ns simplex-link-op $node5 $node2 color black
-$ns simplex-link-op $node5 $node2 orient 57.9deg
+$ns duplex-link $node5 $node2 10.000000Mb 20.000000ms DropTail
+$ns duplex-link-op $node5 $node2 queuePos 0.5
+$ns duplex-link-op $node5 $node2 color black
+$ns duplex-link-op $node5 $node2 orient 57.9deg
 # Set Queue Properties for link 5->2
 [[$ns link $node5 $node2] queue] set limit_ 20
 
-$ns simplex-link $node6 $node3 10.000000Mb 20.000000ms DropTail
-$ns simplex-link-op $node6 $node3 queuePos 0.5
-$ns simplex-link-op $node6 $node3 color black
-$ns simplex-link-op $node6 $node3 orient 112.5deg
+$ns duplex-link $node6 $node3 10.000000Mb 20.000000ms DropTail
+$ns duplex-link-op $node6 $node3 queuePos 0.5
+$ns duplex-link-op $node6 $node3 color black
+$ns duplex-link-op $node6 $node3 orient 112.5deg
 # Set Queue Properties for link 6->3
 [[$ns link $node6 $node3] queue] set limit_ 20
 
