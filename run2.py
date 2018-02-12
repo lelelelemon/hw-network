@@ -41,7 +41,7 @@ def calThroughput(queue_type, stage):
                 t1 += stage
                 total_recieved_bytes_0 = 0
                 total_recieved_bytes_1 = 0
-		total_received_bytes_2 = 0
+		total_recieved_bytes_2 = 0
             f_w.close  
 def calLatency(queue_type, stage):
     trace = "trace/part2_2_" + queue_type+ ".trace"
