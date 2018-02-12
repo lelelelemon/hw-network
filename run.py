@@ -25,9 +25,9 @@ def calThroughput(tcp_type, queue_type, stage):
             t_addr = records[9]
             s_n = records[10]
             if f_id == '1' and eve_type == 'r' and t_n == '3':
-                total_recieved_bytes_0 += 1
+                total_recieved_bytes_0 += pkt_size
             if f_id == '2' and eve_type == 'r' and t_n == '5':
-                total_recieved_bytes_1 += 1
+                total_recieved_bytes_1 += pkt_size
             if t - t1 <= stage:
                 pass
             else:
