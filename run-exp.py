@@ -1,7 +1,6 @@
 import sys
 import os
 import time
-import matplotlib.pyplot as plt
 
 CBRS = [1,2,3,4,5,6,7,8,9,10]
 
