@@ -14,7 +14,7 @@ set v1 [lindex $argv 1]
 set cbr_rate [lindex $argv 2]
 
 # Create a nam trace datafile.
-set namfile [open /home/junwen/course/cs333/hw1/part1.nam w]
+set namfile [open nam/part1_2.nam w]
 $ns namtrace-all $namfile
 
 set tf [open trace/part1_2_${v0}_${v1}_${cbr_rate}.trace w]
