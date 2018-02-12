@@ -78,101 +78,101 @@ $node8 set Z_ 0.0
 $node8 color "black"
 
 # Create links between nodes.
-$ns simplex-link $node8 $node3 10.00Mb 20.000000ms $v0
-$ns simplex-link-op $node8 $node3 queuePos 0.5
-$ns simplex-link-op $node8 $node3 color black
-$ns simplex-link-op $node8 $node3 orient 191.6deg
+$ns duplex-link $node8 $node3 10.00Mb 20.000000ms $v0
+$ns duplex-link-op $node8 $node3 queuePos 0.5
+$ns duplex-link-op $node8 $node3 color black
+$ns duplex-link-op $node8 $node3 orient 191.6deg
 # Set Queue Properties for link 8->3
 [[$ns link $node8 $node3] queue] set limit_ 20
 
-$ns simplex-link $node7 $node2 10.00Mb 20.000000ms $v0
-$ns simplex-link-op $node7 $node2 queuePos 0.5
-$ns simplex-link-op $node7 $node2 color black
-$ns simplex-link-op $node7 $node2 orient 0.6deg
+$ns duplex-link $node7 $node2 10.00Mb 20.000000ms $v0
+$ns duplex-link-op $node7 $node2 queuePos 0.5
+$ns duplex-link-op $node7 $node2 color black
+$ns duplex-link-op $node7 $node2 orient 0.6deg
 # Set Queue Properties for link 7->2
 [[$ns link $node7 $node2] queue] set limit_ 20
 
-$ns simplex-link $node6 $node3 10.00Mb 20.000000ms $v0
-$ns simplex-link-op $node6 $node3 queuePos 0.5
-$ns simplex-link-op $node6 $node3 color black
-$ns simplex-link-op $node6 $node3 orient 114.1deg
+$ns duplex-link $node6 $node3 10.00Mb 20.000000ms $v0
+$ns duplex-link-op $node6 $node3 queuePos 0.5
+$ns duplex-link-op $node6 $node3 color black
+$ns duplex-link-op $node6 $node3 orient 114.1deg
 # Set Queue Properties for link 6->3
 [[$ns link $node6 $node3] queue] set limit_ 20
 
-$ns simplex-link $node5 $node2 10.00Mb 20.000000ms $v0
-$ns simplex-link-op $node5 $node2 queuePos 0.5
-$ns simplex-link-op $node5 $node2 color black
-$ns simplex-link-op $node5 $node2 orient 72.3deg
+$ns duplex-link $node5 $node2 10.00Mb 20.000000ms $v0
+$ns duplex-link-op $node5 $node2 queuePos 0.5
+$ns duplex-link-op $node5 $node2 color black
+$ns duplex-link-op $node5 $node2 orient 72.3deg
 # Set Queue Properties for link 5->2
 [[$ns link $node5 $node2] queue] set limit_ 20
 
-$ns simplex-link $node4 $node3 10.00Mb 20.000000ms $v0
-$ns simplex-link-op $node4 $node3 queuePos 0.5
-$ns simplex-link-op $node4 $node3 color black
-$ns simplex-link-op $node4 $node3 orient 254.5deg
+$ns duplex-link $node4 $node3 10.00Mb 20.000000ms $v0
+$ns duplex-link-op $node4 $node3 queuePos 0.5
+$ns duplex-link-op $node4 $node3 color black
+$ns duplex-link-op $node4 $node3 orient 254.5deg
 # Set Queue Properties for link 4->3
 [[$ns link $node4 $node3] queue] set limit_ 20
 
-$ns simplex-link $node3 $node6 10.00Mb 20.000000ms $v0
-$ns simplex-link-op $node3 $node6 queuePos 0.5
-$ns simplex-link-op $node3 $node6 color black
-$ns simplex-link-op $node3 $node6 orient 294.1deg
+$ns duplex-link $node3 $node6 10.00Mb 20.000000ms $v0
+$ns duplex-link-op $node3 $node6 queuePos 0.5
+$ns duplex-link-op $node3 $node6 color black
+$ns duplex-link-op $node3 $node6 orient 294.1deg
 # Set Queue Properties for link 3->6
 [[$ns link $node3 $node6] queue] set limit_ 20
 
-$ns simplex-link $node3 $node8 10.00Mb 20.000000ms $v0
-$ns simplex-link-op $node3 $node8 queuePos 0.5
-$ns simplex-link-op $node3 $node8 color black
-$ns simplex-link-op $node3 $node8 orient 11.6deg
+$ns duplex-link $node3 $node8 10.00Mb 20.000000ms $v0
+$ns duplex-link-op $node3 $node8 queuePos 0.5
+$ns duplex-link-op $node3 $node8 color black
+$ns duplex-link-op $node3 $node8 orient 11.6deg
 # Set Queue Properties for link 3->8
 [[$ns link $node3 $node8] queue] set limit_ 20
 
-$ns simplex-link $node3 $node4 10.00Mb 20.000000ms $v0
-$ns simplex-link-op $node3 $node4 queuePos 0.5
-$ns simplex-link-op $node3 $node4 color black
-$ns simplex-link-op $node3 $node4 orient 74.5deg
+$ns duplex-link $node3 $node4 10.00Mb 20.000000ms $v0
+$ns duplex-link-op $node3 $node4 queuePos 0.5
+$ns duplex-link-op $node3 $node4 color black
+$ns duplex-link-op $node3 $node4 orient 74.5deg
 # Set Queue Properties for link 3->4
 [[$ns link $node3 $node4] queue] set limit_ 20
 
-$ns simplex-link $node3 $node2 1.500Mb 20.000000ms $v0
-$ns simplex-link-op $node3 $node2 queuePos 0.5
-$ns simplex-link-op $node3 $node2 color black
-$ns simplex-link-op $node3 $node2 orient 177.0deg
+$ns duplex-link $node3 $node2 1.500Mb 20.000000ms $v0
+$ns duplex-link-op $node3 $node2 queuePos 0.5
+$ns duplex-link-op $node3 $node2 color black
+$ns duplex-link-op $node3 $node2 orient 177.0deg
 # Set Queue Properties for link 3->2
 [[$ns link $node3 $node2] queue] set limit_ 20
 
-$ns simplex-link $node2 $node5 10.00Mb 20.000000ms $v0
-$ns simplex-link-op $node2 $node5 queuePos 0.5
-$ns simplex-link-op $node2 $node5 color black
-$ns simplex-link-op $node2 $node5 orient 252.3deg
+$ns duplex-link $node2 $node5 10.00Mb 20.000000ms $v0
+$ns duplex-link-op $node2 $node5 queuePos 0.5
+$ns duplex-link-op $node2 $node5 color black
+$ns duplex-link-op $node2 $node5 orient 252.3deg
 # Set Queue Properties for link 2->5
 [[$ns link $node2 $node5] queue] set limit_ 20
 
-$ns simplex-link $node2 $node7 10.00Mb 20.000000ms $v0
-$ns simplex-link-op $node2 $node7 queuePos 0.5
-$ns simplex-link-op $node2 $node7 color black
-$ns simplex-link-op $node2 $node7 orient 180.6deg
+$ns duplex-link $node2 $node7 10.00Mb 20.000000ms $v0
+$ns duplex-link-op $node2 $node7 queuePos 0.5
+$ns duplex-link-op $node2 $node7 color black
+$ns duplex-link-op $node2 $node7 orient 180.6deg
 # Set Queue Properties for link 2->7
 [[$ns link $node2 $node7] queue] set limit_ 20
 
-$ns simplex-link $node2 $node3 1.500Mb 20.000000ms $v0
-$ns simplex-link-op $node2 $node3 queuePos 0.5
-$ns simplex-link-op $node2 $node3 color black
-$ns simplex-link-op $node2 $node3 orient 357.0deg
+$ns duplex-link $node2 $node3 1.500Mb 20.000000ms $v0
+$ns duplex-link-op $node2 $node3 queuePos 0.5
+$ns duplex-link-op $node2 $node3 color black
+$ns duplex-link-op $node2 $node3 orient 357.0deg
 # Set Queue Properties for link 2->3
 [[$ns link $node2 $node3] queue] set limit_ 20
 
-$ns simplex-link $node2 $node1 10.00Mb 20.000000ms $v0
-$ns simplex-link-op $node2 $node1 queuePos 0.5
-$ns simplex-link-op $node2 $node1 color black
-$ns simplex-link-op $node2 $node1 orient 119.2deg
+$ns duplex-link $node2 $node1 10.00Mb 20.000000ms $v0
+$ns duplex-link-op $node2 $node1 queuePos 0.5
+$ns duplex-link-op $node2 $node1 color black
+$ns duplex-link-op $node2 $node1 orient 119.2deg
 # Set Queue Properties for link 2->1
 [[$ns link $node2 $node1] queue] set limit_ 20
 
-$ns simplex-link $node1 $node2 10.00Mb 20.000000ms $v0
-$ns simplex-link-op $node1 $node2 queuePos 0.5
-$ns simplex-link-op $node1 $node2 color black
-$ns simplex-link-op $node1 $node2 orient 299.2deg
+$ns duplex-link $node1 $node2 10.00Mb 20.000000ms $v0
+$ns duplex-link-op $node1 $node2 queuePos 0.5
+$ns duplex-link-op $node1 $node2 color black
+$ns duplex-link-op $node1 $node2 orient 299.2deg
 # Set Queue Properties for link 1->2
 [[$ns link $node1 $node2] queue] set limit_ 20
 
